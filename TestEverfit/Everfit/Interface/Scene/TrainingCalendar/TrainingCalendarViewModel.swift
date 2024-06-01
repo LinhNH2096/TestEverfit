@@ -6,7 +6,7 @@ class TrainingCalendarViewModel: BaseViewModel, ViewModelTransformable {
 
     // MARK: UseCase
     private var localDataUseCase: TrainingCalendarLocalDataUseCaseable = TrainingCalendarLocalDataUseCase()
-    private var apiDataUseCase: TrainingCalendarAPIDataUseCaseable = TrainingCalendarMockAPIDataUseCase()
+    private var apiDataUseCase: TrainingCalendarAPIDataUseCaseable = TrainingCalendarAPIDataUseCase()
 
     // MARK: Subject
     private let dataModels = BehaviorRelay<[TrainingCalendarCellModel]>(value: [])
@@ -25,8 +25,9 @@ class TrainingCalendarViewModel: BaseViewModel, ViewModelTransformable {
         
         self.handleLocalTrainingData()
         self.getCacheData()
-        self.handleLoadDataTrigger(input: input)
 
+        self.handleLoadDataTrigger(input: input)
+        self.handleChangeWorkoutSelection(input: input)
         return Output(dataModels: dataModels.asDriverOnErrorJustComplete(),
                       onLoading: onLoading.asDriverOnErrorJustComplete(),
                       onError: onError.asDriverOnErrorJustComplete())
@@ -90,11 +91,25 @@ class TrainingCalendarViewModel: BaseViewModel, ViewModelTransformable {
             .disposed(by: disposeBag)
     }
 
+    private func handleChangeWorkoutSelection(input: Input) {
+        input.changedSelection
+            .drive(onNext: { [weak self] updatedCellModel in
+                guard let self else { return }
+                var currentCellModels = self.dataModels.value
+                if let cellIndex = currentCellModels.firstIndex(where: { $0.date.isSameDate(with: updatedCellModel.date) }) {
+                    currentCellModels[cellIndex] = updatedCellModel
+                    self.dataModels.accept(currentCellModels)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
 }
 
 extension TrainingCalendarViewModel {
     struct Input {
         var loadDataTrigger: Driver<Void>
+        var changedSelection: Driver<TrainingCalendarCellModel>
     }
 
     struct Output {

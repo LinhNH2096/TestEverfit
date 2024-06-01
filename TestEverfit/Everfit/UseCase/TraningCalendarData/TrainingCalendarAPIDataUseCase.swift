@@ -2,10 +2,12 @@ import RxCocoa
 import RxSwift
 import Alamofire
 
+// MARK: - Usecaseable
 protocol TrainingCalendarAPIDataUseCaseable {
     func getTrainingAPIData() -> Observable<Result<TrainingCalendarResponse?, Error>>
 }
 
+// MARK: - Usecase Implementation
 class TrainingCalendarAPIDataUseCase: TrainingCalendarAPIDataUseCaseable {
 
     func getTrainingAPIData() -> Observable<Result<TrainingCalendarResponse?, Error>> {
@@ -25,6 +27,7 @@ class TrainingCalendarAPIDataUseCase: TrainingCalendarAPIDataUseCaseable {
     }
 }
 
+// MARK: - Usecase Mock for Test
 class TrainingCalendarMockAPIDataUseCase: TrainingCalendarAPIDataUseCaseable {
 
     func getTrainingAPIData() -> Observable<Result<TrainingCalendarResponse?, Error>> {

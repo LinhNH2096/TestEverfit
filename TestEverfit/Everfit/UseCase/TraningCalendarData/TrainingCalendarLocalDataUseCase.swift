@@ -1,6 +1,7 @@
 import RxCocoa
 import RxSwift
 
+// MARK: - Usecaseable
 protocol TrainingCalendarLocalDataUseCaseable {
 
     func getLocalTrainingData(startDate: Date, endDate: Date) -> Observable<Result<[RMTrainingDayData], Error>>
@@ -10,6 +11,7 @@ protocol TrainingCalendarLocalDataUseCaseable {
     func saveLocalTrainingDayData(data trainingDayDatas: [RMTrainingDayData]) -> Observable<[Error]>
 }
 
+// MARK: - Usecase Implementation
 class TrainingCalendarLocalDataUseCase: TrainingCalendarLocalDataUseCaseable {
     var localDataService = ServiceFacade.realmDataSaver
 

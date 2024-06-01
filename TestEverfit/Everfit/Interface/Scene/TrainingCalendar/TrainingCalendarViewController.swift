@@ -7,6 +7,7 @@ class TrainingCalendarViewController: BaseViewController {
 
     // MARK: Subjects
     private var loadDataTrigger = PublishRelay<Void>()
+    private var changedSelection = PublishRelay<TrainingCalendarCellModel>()
     private var trainingDates = BehaviorRelay<[TrainingCalendarCellModel]>(value: [])
 
     // MARK: Variables
@@ -28,7 +29,9 @@ class TrainingCalendarViewController: BaseViewController {
         let cellIdentifier = TrainingCalendarTableViewCell.self.identifier
         trainingDates
             .bind(to: tableView.rx.items(cellIdentifier: cellIdentifier,
-                                       cellType: TrainingCalendarTableViewCell.self)) { index, model, cell in
+                                       cellType: TrainingCalendarTableViewCell.self)) { [weak self] index, model, cell in
+                guard let self else { return }
+                cell.delegate = self
                 cell.configureCell(with: model)
         }
         .disposed(by: disposeBag)
@@ -39,7 +42,8 @@ class TrainingCalendarViewController: BaseViewController {
     private func bindingData() {
         let input = TrainingCalendarViewModel
             .Input(
-                loadDataTrigger: loadDataTrigger.asDriverOnErrorJustComplete()
+                loadDataTrigger: loadDataTrigger.asDriverOnErrorJustComplete(),
+                changedSelection: changedSelection.asDriverOnErrorJustComplete()
             )
         let output = viewModel.transform(input: input)
 
@@ -54,5 +58,12 @@ class TrainingCalendarViewController: BaseViewController {
         output.dataModels
             .drive(trainingDates)
             .disposed(by: disposeBag)
+    }
+}
+
+// MARK: TrainingCalendarTableViewCellDelegate
+extension TrainingCalendarViewController: TrainingCalendarTableViewCellDelegate {
+    func didChangeSelection(cell: TrainingCalendarTableViewCell, with cellModel: TrainingCalendarCellModel) {
+        self.changedSelection.accept(cellModel)
     }
 }

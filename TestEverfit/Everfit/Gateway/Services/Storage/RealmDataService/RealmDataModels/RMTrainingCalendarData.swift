@@ -32,27 +32,27 @@ class RMTrainingDayData: Object {
         let workouts: [WorkoutModel] = assignments.map { assignment -> WorkoutModel in
             if self.date.isInFuture {
                 return WorkoutModel(id: assignment.id,
+                                    date: self.date,
                                     name: assignment.title,
                                     status: .future,
                                     numberOfExercises: assignment.exercisesCount,
-                                    completedExercises: assignment.exercisesCompleted,
-                                    isEditable: false)
+                                    completedExercises: assignment.exercisesCompleted)
             } else if self.date.isInToday {
                 let status: WorkoutStatus = assignment.isCompleted ? .completed : .idle
                 return WorkoutModel(id: assignment.id,
+                                    date: self.date,
                                     name: assignment.title,
                                     status: status,
                                     numberOfExercises: assignment.exercisesCount,
-                                    completedExercises: assignment.exercisesCompleted,
-                                    isEditable: false)
+                                    completedExercises: assignment.exercisesCompleted)
             } else {
                 let status: WorkoutStatus = assignment.isCompleted ? .completed : .missed
                 return WorkoutModel(id: assignment.id,
+                                    date: self.date,
                                     name: assignment.title,
                                     status: status,
                                     numberOfExercises: assignment.exercisesCount,
-                                    completedExercises: assignment.exercisesCompleted,
-                                    isEditable: false)
+                                    completedExercises: assignment.exercisesCompleted)
             }
         }
         return TrainingCalendarCellModel(date: date,
