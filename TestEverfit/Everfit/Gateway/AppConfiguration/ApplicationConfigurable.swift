@@ -17,7 +17,7 @@ protocol ApplicationConfigurable {
 
 extension ApplicationConfigurable {
     func setRoot(window: UIWindow, view: UIViewController) {
-        UIView.transition(with: window, duration: 0.22, options: .transitionFlipFromRight, animations: {
+        UIView.transition(with: window, duration: 0.22, options: .transitionCrossDissolve, animations: {
             let oldState = UIView.areAnimationsEnabled
             UIView.setAnimationsEnabled(false)
             window.rootViewController = view
@@ -32,7 +32,7 @@ class ApplicationConfiguration: ApplicationConfigurable {
 
     func applicationRoute(from window: UIWindow) {
         self.window = window
-        let mainNavigation = UINavigationController(rootViewController: HomeViewController())
+        let mainNavigation = UINavigationController(rootViewController: TrainingCalendarViewController())
         mainNavigation.isNavigationBarHidden = true
         setRoot(window: window, view: mainNavigation)
     }
@@ -57,15 +57,15 @@ class ApplicationConfiguration: ApplicationConfigurable {
 
 extension ApplicationConfiguration {
     private func setupNetfox() {
-        #if DEV
+#if DEV
         NFX.sharedInstance().start()
-        #endif
+#endif
     }
 
     private func stopNetfox() {
-        #if DEV
+#if DEV
         NFX.sharedInstance().stop()
-        #endif
+#endif
     }
 
     private func setupKeyboard() {
@@ -79,7 +79,7 @@ extension ApplicationConfiguration {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithTransparentBackground()
         navigationBarAppearance.backgroundColor = AppColor.appBackground
-        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: AppFont.roboto(name: .bold, size: 16),
+        navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold),
                                                        NSAttributedString.Key.foregroundColor: AppColor.main]
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         UINavigationBar.appearance().compactAppearance = navigationBarAppearance

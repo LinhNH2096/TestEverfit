@@ -88,7 +88,7 @@ extension BaseViewController {
         }
 
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: AppFont.roboto(name: .bold, size: 16),
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold),
                                                                    NSAttributedString.Key.foregroundColor: AppColor.main]
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil

@@ -32,14 +32,8 @@
 		683589BA2C0A2A6300BB55F9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683589B92C0A2A6300BB55F9 /* User.swift */; };
 		683970692BB06558008524D3 /* EnhancedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683970672BB06558008524D3 /* EnhancedView.swift */; };
 		6839706C2BB069CE008524D3 /* EnhancedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6839706B2BB069CE008524D3 /* EnhancedButton.swift */; };
-		685F37472B9C875500DD0AA4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F37452B9C875500DD0AA4 /* HomeViewController.swift */; };
-		685F37482B9C875500DD0AA4 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685F37462B9C875500DD0AA4 /* HomeViewController.xib */; };
-		685F375F2B9DB25300DD0AA4 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 685F37592B9DB25200DD0AA4 /* Roboto-Thin.ttf */; };
-		685F37602B9DB25300DD0AA4 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 685F375A2B9DB25200DD0AA4 /* Roboto-Medium.ttf */; };
-		685F37612B9DB25300DD0AA4 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 685F375B2B9DB25200DD0AA4 /* Roboto-Bold.ttf */; };
-		685F37622B9DB25300DD0AA4 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 685F375C2B9DB25200DD0AA4 /* Roboto-Black.ttf */; };
-		685F37632B9DB25300DD0AA4 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 685F375D2B9DB25300DD0AA4 /* Roboto-Light.ttf */; };
-		685F37642B9DB25300DD0AA4 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 685F375E2B9DB25300DD0AA4 /* Roboto-Regular.ttf */; };
+		685F37472B9C875500DD0AA4 /* TrainingCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F37452B9C875500DD0AA4 /* TrainingCalendarViewController.swift */; };
+		685F37482B9C875500DD0AA4 /* TrainingCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685F37462B9C875500DD0AA4 /* TrainingCalendarViewController.xib */; };
 		685F37662B9DB3A200DD0AA4 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F37652B9DB3A200DD0AA4 /* AppFont.swift */; };
 		685F37682B9E0AE200DD0AA4 /* BasePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685F37672B9E0AE200DD0AA4 /* BasePopUpVC.swift */; };
 		685F37832B9F62C000DD0AA4 /* MainTabbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 685F37812B9F62C000DD0AA4 /* MainTabbarViewController.xib */; };
@@ -52,6 +46,18 @@
 		68BA31042A2D8A2600703889 /* UIview+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA31032A2D8A2600703889 /* UIview+Extension.swift */; };
 		68BA310B2A2D95FA00703889 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68BA310A2A2D95FA00703889 /* CommonUtils.swift */; };
 		68EA696C2A2DBC4000EC0045 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68EA696E2A2DBC4000EC0045 /* InfoPlist.strings */; };
+		68FC39B72C0AD2D400357FF0 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39AB2C0AD2D300357FF0 /* OpenSans-LightItalic.ttf */; };
+		68FC39B82C0AD2D400357FF0 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39AC2C0AD2D300357FF0 /* OpenSans-Regular.ttf */; };
+		68FC39B92C0AD2D400357FF0 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39AD2C0AD2D300357FF0 /* OpenSans-ExtraBoldItalic.ttf */; };
+		68FC39BA2C0AD2D400357FF0 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39AE2C0AD2D300357FF0 /* OpenSans-Bold.ttf */; };
+		68FC39BB2C0AD2D400357FF0 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39AF2C0AD2D400357FF0 /* OpenSans-Italic.ttf */; };
+		68FC39BC2C0AD2D400357FF0 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39B02C0AD2D400357FF0 /* OpenSans-SemiBold.ttf */; };
+		68FC39BD2C0AD2D400357FF0 /* OpenSans-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39B12C0AD2D400357FF0 /* OpenSans-MediumItalic.ttf */; };
+		68FC39BE2C0AD2D400357FF0 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39B22C0AD2D400357FF0 /* OpenSans-Light.ttf */; };
+		68FC39BF2C0AD2D400357FF0 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39B32C0AD2D400357FF0 /* OpenSans-ExtraBold.ttf */; };
+		68FC39C02C0AD2D400357FF0 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39B42C0AD2D400357FF0 /* OpenSans-Medium.ttf */; };
+		68FC39C12C0AD2D400357FF0 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39B52C0AD2D400357FF0 /* OpenSans-SemiBoldItalic.ttf */; };
+		68FC39C22C0AD2D400357FF0 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39B62C0AD2D400357FF0 /* OpenSans-BoldItalic.ttf */; };
 		F42802AB24A2076A0044796B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42802AA24A2076A0044796B /* AppDelegate.swift */; };
 		F42802B424A2076D0044796B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F42802B324A2076D0044796B /* Assets.xcassets */; };
 		F42802B724A2076D0044796B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42802B524A2076D0044796B /* LaunchScreen.storyboard */; };
@@ -70,7 +76,6 @@
 		326F0CC524B41EEA00256F00 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		326F0CCC24B42E9A00256F00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4183853B278EC4F400D630FA /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
-		41A30802278EC11C008ED995 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extension.swift"; path = "../Libraries/JHTAlertController/UIColor+Extension.swift"; sourceTree = "<group>"; };
 		41AFBC5D278EBA2F0013DE96 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		41B861AF2787F60C000F6263 /* AppDefine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefine.swift; sourceTree = "<group>"; };
 		41B861B2278818C3000F6263 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -91,14 +96,8 @@
 		683589B92C0A2A6300BB55F9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		683970672BB06558008524D3 /* EnhancedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnhancedView.swift; sourceTree = "<group>"; };
 		6839706B2BB069CE008524D3 /* EnhancedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedButton.swift; sourceTree = "<group>"; };
-		685F37452B9C875500DD0AA4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		685F37462B9C875500DD0AA4 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		685F37592B9DB25200DD0AA4 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		685F375A2B9DB25200DD0AA4 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		685F375B2B9DB25200DD0AA4 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		685F375C2B9DB25200DD0AA4 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
-		685F375D2B9DB25300DD0AA4 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
-		685F375E2B9DB25300DD0AA4 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		685F37452B9C875500DD0AA4 /* TrainingCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCalendarViewController.swift; sourceTree = "<group>"; };
+		685F37462B9C875500DD0AA4 /* TrainingCalendarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingCalendarViewController.xib; sourceTree = "<group>"; };
 		685F37652B9DB3A200DD0AA4 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		685F37672B9E0AE200DD0AA4 /* BasePopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePopUpVC.swift; sourceTree = "<group>"; };
 		685F37812B9F62C000DD0AA4 /* MainTabbarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTabbarViewController.xib; sourceTree = "<group>"; };
@@ -113,6 +112,18 @@
 		68EA696D2A2DBC4000EC0045 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		68EA69782A2DBF2400EC0045 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
 		68EA69792A2DBF2400EC0045 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		68FC39AB2C0AD2D300357FF0 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		68FC39AC2C0AD2D300357FF0 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		68FC39AD2C0AD2D300357FF0 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		68FC39AE2C0AD2D300357FF0 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		68FC39AF2C0AD2D400357FF0 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		68FC39B02C0AD2D400357FF0 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		68FC39B12C0AD2D400357FF0 /* OpenSans-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		68FC39B22C0AD2D400357FF0 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		68FC39B32C0AD2D400357FF0 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		68FC39B42C0AD2D400357FF0 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
+		68FC39B52C0AD2D400357FF0 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		68FC39B62C0AD2D400357FF0 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		F1E0BAEB4773164C17C0F841 /* Pods-Everfit.product.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Everfit.product.xcconfig"; path = "Target Support Files/Pods-Everfit/Pods-Everfit.product.xcconfig"; sourceTree = "<group>"; };
 		F42802A724A2076A0044796B /* Everfit Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Everfit Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42802AA24A2076A0044796B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,7 +212,6 @@
 				326F0CBB24B413BD00256F00 /* NumberFormatter+Extension.swift */,
 				326F0CC524B41EEA00256F00 /* UIImageView+Extension.swift */,
 				41AFBC5D278EBA2F0013DE96 /* UIApplication+Extension.swift */,
-				41A30802278EC11C008ED995 /* UIColor+Extension.swift */,
 				4183853B278EC4F400D630FA /* UILabel+Extension.swift */,
 				68BA31012A2D894C00703889 /* UIStackView+Extension.swift */,
 				68BA31032A2D8A2600703889 /* UIview+Extension.swift */,
@@ -303,13 +313,13 @@
 			path = EnhancedView;
 			sourceTree = "<group>";
 		};
-		685F37442B9C870B00DD0AA4 /* Home */ = {
+		685F37442B9C870B00DD0AA4 /* TrainingCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				685F37452B9C875500DD0AA4 /* HomeViewController.swift */,
-				685F37462B9C875500DD0AA4 /* HomeViewController.xib */,
+				685F37452B9C875500DD0AA4 /* TrainingCalendarViewController.swift */,
+				685F37462B9C875500DD0AA4 /* TrainingCalendarViewController.xib */,
 			);
-			path = Home;
+			path = TrainingCalendar;
 			sourceTree = "<group>";
 		};
 		685F374E2B9C884C00DD0AA4 /* Common */ = {
@@ -323,12 +333,7 @@
 		685F37582B9DB14900DD0AA4 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				685F375C2B9DB25200DD0AA4 /* Roboto-Black.ttf */,
-				685F375B2B9DB25200DD0AA4 /* Roboto-Bold.ttf */,
-				685F375D2B9DB25300DD0AA4 /* Roboto-Light.ttf */,
-				685F375A2B9DB25200DD0AA4 /* Roboto-Medium.ttf */,
-				685F375E2B9DB25300DD0AA4 /* Roboto-Regular.ttf */,
-				685F37592B9DB25200DD0AA4 /* Roboto-Thin.ttf */,
+				68FC39AA2C0AD2BF00357FF0 /* OpenSan */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -364,6 +369,25 @@
 				689F360D2A29F0BC000B3596 /* BaseView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		68FC39AA2C0AD2BF00357FF0 /* OpenSan */ = {
+			isa = PBXGroup;
+			children = (
+				68FC39AE2C0AD2D300357FF0 /* OpenSans-Bold.ttf */,
+				68FC39B62C0AD2D400357FF0 /* OpenSans-BoldItalic.ttf */,
+				68FC39B32C0AD2D400357FF0 /* OpenSans-ExtraBold.ttf */,
+				68FC39AD2C0AD2D300357FF0 /* OpenSans-ExtraBoldItalic.ttf */,
+				68FC39AF2C0AD2D400357FF0 /* OpenSans-Italic.ttf */,
+				68FC39B22C0AD2D400357FF0 /* OpenSans-Light.ttf */,
+				68FC39AB2C0AD2D300357FF0 /* OpenSans-LightItalic.ttf */,
+				68FC39B42C0AD2D400357FF0 /* OpenSans-Medium.ttf */,
+				68FC39B12C0AD2D400357FF0 /* OpenSans-MediumItalic.ttf */,
+				68FC39AC2C0AD2D300357FF0 /* OpenSans-Regular.ttf */,
+				68FC39B02C0AD2D400357FF0 /* OpenSans-SemiBold.ttf */,
+				68FC39B52C0AD2D400357FF0 /* OpenSans-SemiBoldItalic.ttf */,
+			);
+			path = OpenSan;
 			sourceTree = "<group>";
 		};
 		EAEFA481904F231B18720020 /* Pods */ = {
@@ -434,7 +458,7 @@
 				680F66722AB9FE87007906FA /* LaunchScreen */,
 				683589BE2C0AB2E700BB55F9 /* Authen */,
 				685F37802B9F62C000DD0AA4 /* MainTabbar */,
-				685F37442B9C870B00DD0AA4 /* Home */,
+				685F37442B9C870B00DD0AA4 /* TrainingCalendar */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -575,19 +599,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				685F37612B9DB25300DD0AA4 /* Roboto-Bold.ttf in Resources */,
-				685F37602B9DB25300DD0AA4 /* Roboto-Medium.ttf in Resources */,
-				685F37622B9DB25300DD0AA4 /* Roboto-Black.ttf in Resources */,
+				68FC39C12C0AD2D400357FF0 /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				68FC39BF2C0AD2D400357FF0 /* OpenSans-ExtraBold.ttf in Resources */,
+				68FC39B72C0AD2D400357FF0 /* OpenSans-LightItalic.ttf in Resources */,
+				68FC39BA2C0AD2D400357FF0 /* OpenSans-Bold.ttf in Resources */,
+				68FC39BD2C0AD2D400357FF0 /* OpenSans-MediumItalic.ttf in Resources */,
 				685F37832B9F62C000DD0AA4 /* MainTabbarViewController.xib in Resources */,
 				68EA696C2A2DBC4000EC0045 /* InfoPlist.strings in Resources */,
-				685F37632B9DB25300DD0AA4 /* Roboto-Light.ttf in Resources */,
+				68FC39BE2C0AD2D400357FF0 /* OpenSans-Light.ttf in Resources */,
+				68FC39B92C0AD2D400357FF0 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				68FC39BB2C0AD2D400357FF0 /* OpenSans-Italic.ttf in Resources */,
+				68FC39C02C0AD2D400357FF0 /* OpenSans-Medium.ttf in Resources */,
 				680F66762AB9FEDE007906FA /* LaunchScreenAnimationViewController.xib in Resources */,
 				326F0CCB24B42E9A00256F00 /* Localizable.strings in Resources */,
-				685F375F2B9DB25300DD0AA4 /* Roboto-Thin.ttf in Resources */,
+				68FC39B82C0AD2D400357FF0 /* OpenSans-Regular.ttf in Resources */,
 				F42802B724A2076D0044796B /* LaunchScreen.storyboard in Resources */,
-				685F37642B9DB25300DD0AA4 /* Roboto-Regular.ttf in Resources */,
+				68FC39BC2C0AD2D400357FF0 /* OpenSans-SemiBold.ttf in Resources */,
 				F42802B424A2076D0044796B /* Assets.xcassets in Resources */,
-				685F37482B9C875500DD0AA4 /* HomeViewController.xib in Resources */,
+				685F37482B9C875500DD0AA4 /* TrainingCalendarViewController.xib in Resources */,
+				68FC39C22C0AD2D400357FF0 /* OpenSans-BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,7 +672,7 @@
 			files = (
 				685F378C2B9F660600DD0AA4 /* DeviceManager.swift in Sources */,
 				685F37662B9DB3A200DD0AA4 /* AppFont.swift in Sources */,
-				685F37472B9C875500DD0AA4 /* HomeViewController.swift in Sources */,
+				685F37472B9C875500DD0AA4 /* TrainingCalendarViewController.swift in Sources */,
 				683589B22C0A266300BB55F9 /* RealmDataSaverServiceable.swift in Sources */,
 				686726112BA094580059B409 /* DateFormat.swift in Sources */,
 				41B861B3278818C3000F6263 /* BaseViewController.swift in Sources */,
