@@ -1,0 +1,113 @@
+{
+  "day_data": [
+    {
+      "_id": "63d79d8d1b68c9001e4c43a0",
+      "assignments": [
+        {
+          "_id": "63db1bf2cc285a001e3445f0",
+          "status": 0,
+          "client": "5f276faff23c01001438df3a",
+          "title": "Legs day",
+          "day": "05-20-2024",
+          "date": "2024-05-20T02:12:02.752Z",
+          "exercises_completed": 0,
+          "exercises_count": 5
+        }
+      ],
+      "trainer": "5db727fd65866b1459115d35",
+      "client": "5f276faff23c01001438df3a",
+      "day": "05-20-2024",
+      "date": "2024-05-28T00:00:00.000Z"
+    },
+    {
+      "_id": "63d8e468bd947d001d0b3bc0",
+      "assignments": [
+        {
+          "_id": "63db1c55cc285a001e344612",
+          "status": 2,
+          "client": "5f276faff23c01001438df3a",
+          "title": "Full warm up workout",
+          "day": "05-21-2024",
+          "date": "2024-05-21T02:13:41.133Z",
+          "exercises_completed": 1,
+          "exercises_count": 8,
+          "start_date": "2024-05-21T02:36:46.892Z",
+          "end_date": "2024-05-21T03:36:46.892Z",
+          "duration": 3600,
+          "rating": -1
+        }
+      ],
+      "trainer": "5db727fd65866b1459115d35",
+      "client": "5f276faff23c01001438df3a",
+      "day": "05-21-2024",
+      "date": "2024-05-29T00:00:00.000Z"
+    },
+    {
+      "_id": "63db1ca8cc285a001e344650",
+      "assignments": [
+        {
+          "_id": "63db1ca8cc285a001e34465a",
+          "status": 0,
+          "client": "5f276faff23c01001438df3a",
+          "title": "Chest and shoulder workout",
+          "day": "05-23-2024",
+          "date": "2024-05-23T02:15:04.391Z",
+          "exercises_completed": 9,
+          "exercises_count": 9
+        }
+      ],
+      "trainer": "5db727fd65866b1459115d35",
+      "client": "5f276faff23c01001438df3a",
+      "day": "05-23-2024",
+      "date": "2024-05-30T02:15:04.391Z"
+    },
+    {
+      "_id": "63db1ccecc285a001e3446dl",
+      "assignments": [
+        {
+          "_id": "63db1ccfcc285a001e3446d2",
+          "status": 0,
+          "client": "5f276faff23c01001438df3a",
+          "title": "Legs day",
+          "day": "05-24-2024",
+          "date": "2024-05-24T02:15:42.000Z",
+          "exercises_completed": 5,
+          "exercises_count": 5
+        },
+        {
+          "_id": "63db1cf4cc285a001e3446fa",
+          "status": 0,
+          "client": "5f276faff23c01001438df3a",
+          "title": "HIIT Tabata 20:10 8x8",
+          "day": "05-24-2024",
+          "date": "2024-05-24T02:16:20.489Z",
+          "exercises_completed": 0,
+          "exercises_count": 15
+        }
+      ],
+      "trainer": "5db727fd65866b1459115d35",
+      "client": "5f276faff23c01001438df3a",
+      "day": "05-24-2024",
+      "date": "2024-06-01T02:15:42.000Z"
+    },
+    {
+      "_id": "63db1d11cc285a001e344740",
+      "assignments": [
+        {
+          "_id": "63db1d11cc285a001e344750",
+          "status": 0,
+          "client": "5f276faff23c01001438df3a",
+          "title": "Squat, press, power clean",
+          "day": "05-26-2024",
+          "date": "2024-05-26T02:16:49.415Z",
+          "exercises_completed": 0,
+          "exercises_count": 6
+        }
+      ],
+      "trainer": "5db727fd65866b1459115d35",
+      "client": "5f276faff23c01001438df3a",
+      "day": "05-26-2024",
+      "date": "2024-06-02T02:16:49.415Z"
+    }
+  ]
+}

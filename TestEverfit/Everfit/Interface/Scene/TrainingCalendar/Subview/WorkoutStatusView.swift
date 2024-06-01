@@ -8,10 +8,16 @@ enum WorkoutStatus {
 }
 
 struct WorkoutModel {
+    let id: String
     var name: String
     var status: WorkoutStatus
-    var numberOfExercises: Int = 0
+    var numberOfExercises: Int
+    var completedExercises: Int
     var isEditable: Bool
+
+    var missedExercises: Int {
+        return numberOfExercises - completedExercises
+    }
 
     var statusAttributeText: NSAttributedString {
         let font: UIFont = AppFont.openSans(size: 13)
@@ -37,7 +43,7 @@ struct WorkoutModel {
             result.append(NSAttributedString(string: "Completed", attributes: completedAttribute))
         case .missed:
             result.append(NSAttributedString(string: "Missed ", attributes: missedAttribute))
-            result.append(NSAttributedString(string: "• \(String(numberOfExercises)) exercises ", attributes: normalExercisesAttribute))
+            result.append(NSAttributedString(string: "• \(String(missedExercises)) exercises ", attributes: normalExercisesAttribute))
         }
         return result
     }
@@ -58,10 +64,9 @@ class WorkoutStatusView: BaseView {
     func configureView(with model: WorkoutModel) {
         actionButton.isHidden = !model.isEditable
         containerView.backgroundColor = model.status == .completed ? AppColor.selected : AppColor.normalBackground
-
         filledImageView.isHidden = model.status != .completed
         statusLabel.attributedText = model.statusAttributeText
-
+        titleLabel.text = model.name
         switch model.status {
         case .idle, .missed:
             titleLabel.textColor = AppColor.mainText

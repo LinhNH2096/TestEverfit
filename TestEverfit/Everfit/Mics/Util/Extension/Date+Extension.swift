@@ -31,22 +31,23 @@ extension Date {
         return weekday
     }
 
-    var startOfWeek: Date? {
+    var startOfWeek: Date {
         let diffWithMonday: Int = WeekDay.mon.rawValue - self.weekDay.rawValue
-        return Calendar.current.date(byAdding: .day, value: diffWithMonday, to: self)
+        let startWeek = Calendar.current.date(byAdding: .day, value: diffWithMonday, to: self) ?? Date()
+        return startWeek.startOfDate()
     }
 
-    var endOfWeek: Date? {
+    var endOfWeek: Date {
         let diffWithMonday: Int = WeekDay.sun.rawValue - self.weekDay.rawValue
-        return Calendar.current.date(byAdding: .day, value: diffWithMonday, to: self)
+        let endWeek = Calendar.current.date(byAdding: .day, value: diffWithMonday, to: self) ?? Date()
+        return endWeek.startOfDate()
     }
 
     func getWeekdays() -> [Date] {
-        guard let startDate = self.startOfWeek, let endDate = self.endOfWeek else { return [] }
         var dates: [Date] = []
         let calendar = Calendar.current
-        var currentDate = startDate
-        while currentDate <= endDate {
+        var currentDate = self.startOfWeek
+        while currentDate <= self.endOfWeek {
             dates.append(currentDate)
             let nextDay = calendar.date(byAdding: .day, value: 1, to: currentDate)!
             currentDate = nextDay
@@ -103,6 +104,17 @@ extension Date {
         }
         let endDate = calendar.date(byAdding: DateComponents(day: -1), to: interval.end)
         return endDate
+    }
+
+    func isSameDate(with date: Date?) -> Bool {
+        guard let date else { return false }
+        let startOfSelfDate = Calendar.current.startOfDay(for: self)
+        let startOfDate = Calendar.current.startOfDay(for: date)
+        return startOfSelfDate == startOfDate
+    }
+
+    func startOfDate() -> Date {
+        return Calendar.current.startOfDay(for: self)
     }
 }
 

@@ -1,8 +1,8 @@
 import UIKit
 
-struct TrainingCalendarCellModel {
+struct TrainingCalendarCellModel: Copyable {
     var date: Date
-    var workouts: [WorkoutModel]
+    var workouts: [WorkoutModel] = []
 }
 
 class TrainingCalendarTableViewCell: UITableViewCell {
