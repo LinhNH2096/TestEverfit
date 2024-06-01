@@ -1,6 +1,17 @@
 import UIKit
 
 extension UIView {
+    var enabled: Bool {
+        set {
+            self.layer.opacity = newValue ? 1 : 0.5
+            self.isUserInteractionEnabled = newValue
+        }
+
+        get {
+            return self.isUserInteractionEnabled
+        }
+    }
+
     func shake() {
         let shakeAnimation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         shakeAnimation.timingFunction = CAMediaTimingFunction(name: .linear)

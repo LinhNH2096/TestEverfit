@@ -7,4 +7,5 @@ class AppColor: NSObject {
     static let missedText: UIColor = UIColor(named: "MissedText") ?? .white
     static let subText: UIColor = UIColor(named: "SubText") ?? .white
     static let normalBackground: UIColor = UIColor(named: "NormalBackground") ?? .white
+    static let whiteText: UIColor = .white
 }

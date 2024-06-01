@@ -89,12 +89,12 @@ extension BaseViewController {
 
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold),
-                                                                   NSAttributedString.Key.foregroundColor: AppColor.main]
+                                                                   NSAttributedString.Key.foregroundColor: AppColor.mainText]
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.view.backgroundColor = AppColor.appBackground
-        navigationController?.navigationBar.tintColor = AppColor.main
+        navigationController?.navigationBar.tintColor = AppColor.mainText
 
         navigationItem.hidesBackButton = true
         navigationItem.title = title
@@ -104,7 +104,7 @@ extension BaseViewController {
 
     private func customImageBarButtonItem(type: BarButtonItemType) -> UIView {
         let button = UIButton(type: .custom)
-        button.setImage(type.image?.withTintColor(AppColor.main), for: .normal)
+        button.setImage(type.image?.withTintColor(AppColor.mainText), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
         switch type {
         case .back:

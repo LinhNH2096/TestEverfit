@@ -58,6 +58,12 @@
 		68FC39C02C0AD2D400357FF0 /* OpenSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39B42C0AD2D400357FF0 /* OpenSans-Medium.ttf */; };
 		68FC39C12C0AD2D400357FF0 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39B52C0AD2D400357FF0 /* OpenSans-SemiBoldItalic.ttf */; };
 		68FC39C22C0AD2D400357FF0 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39B62C0AD2D400357FF0 /* OpenSans-BoldItalic.ttf */; };
+		68FC39C62C0AE03E00357FF0 /* TrainingCalendarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39C52C0AE03E00357FF0 /* TrainingCalendarTableViewCell.xib */; };
+		68FC39C72C0AE03E00357FF0 /* TrainingCalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FC39C42C0AE03E00357FF0 /* TrainingCalendarTableViewCell.swift */; };
+		68FC39CA2C0AE55800357FF0 /* WorkoutStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FC39C92C0AE55800357FF0 /* WorkoutStatusView.swift */; };
+		68FC39CC2C0AE5B200357FF0 /* WorkoutStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68FC39CB2C0AE5B200357FF0 /* WorkoutStatusView.xib */; };
+		68FC39CE2C0AF46B00357FF0 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FC39CD2C0AF46B00357FF0 /* UITableView+Extension.swift */; };
+		68FC39D02C0AF76600357FF0 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FC39CF2C0AF76600357FF0 /* Date+Extension.swift */; };
 		F42802AB24A2076A0044796B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42802AA24A2076A0044796B /* AppDelegate.swift */; };
 		F42802B424A2076D0044796B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F42802B324A2076D0044796B /* Assets.xcassets */; };
 		F42802B724A2076D0044796B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F42802B524A2076D0044796B /* LaunchScreen.storyboard */; };
@@ -124,6 +130,12 @@
 		68FC39B42C0AD2D400357FF0 /* OpenSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Medium.ttf"; sourceTree = "<group>"; };
 		68FC39B52C0AD2D400357FF0 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		68FC39B62C0AD2D400357FF0 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		68FC39C42C0AE03E00357FF0 /* TrainingCalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingCalendarTableViewCell.swift; sourceTree = "<group>"; };
+		68FC39C52C0AE03E00357FF0 /* TrainingCalendarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrainingCalendarTableViewCell.xib; sourceTree = "<group>"; };
+		68FC39C92C0AE55800357FF0 /* WorkoutStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStatusView.swift; sourceTree = "<group>"; };
+		68FC39CB2C0AE5B200357FF0 /* WorkoutStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkoutStatusView.xib; sourceTree = "<group>"; };
+		68FC39CD2C0AF46B00357FF0 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		68FC39CF2C0AF76600357FF0 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		F1E0BAEB4773164C17C0F841 /* Pods-Everfit.product.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Everfit.product.xcconfig"; path = "Target Support Files/Pods-Everfit/Pods-Everfit.product.xcconfig"; sourceTree = "<group>"; };
 		F42802A724A2076A0044796B /* Everfit Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Everfit Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42802AA24A2076A0044796B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +229,8 @@
 				68BA31032A2D8A2600703889 /* UIview+Extension.swift */,
 				6806D4652A301BCC00953A46 /* UIViewController+Extension.swift */,
 				68B6150B2BA08E6500D4A5EF /* UIImage+Extension.swift */,
+				68FC39CD2C0AF46B00357FF0 /* UITableView+Extension.swift */,
+				68FC39CF2C0AF76600357FF0 /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -316,6 +330,8 @@
 		685F37442B9C870B00DD0AA4 /* TrainingCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				68FC39C82C0AE50700357FF0 /* Subview */,
+				68FC39C32C0ADFF400357FF0 /* Cell */,
 				685F37452B9C875500DD0AA4 /* TrainingCalendarViewController.swift */,
 				685F37462B9C875500DD0AA4 /* TrainingCalendarViewController.xib */,
 			);
@@ -388,6 +404,24 @@
 				68FC39B52C0AD2D400357FF0 /* OpenSans-SemiBoldItalic.ttf */,
 			);
 			path = OpenSan;
+			sourceTree = "<group>";
+		};
+		68FC39C32C0ADFF400357FF0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				68FC39C42C0AE03E00357FF0 /* TrainingCalendarTableViewCell.swift */,
+				68FC39C52C0AE03E00357FF0 /* TrainingCalendarTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		68FC39C82C0AE50700357FF0 /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				68FC39C92C0AE55800357FF0 /* WorkoutStatusView.swift */,
+				68FC39CB2C0AE5B200357FF0 /* WorkoutStatusView.xib */,
+			);
+			path = Subview;
 			sourceTree = "<group>";
 		};
 		EAEFA481904F231B18720020 /* Pods */ = {
@@ -607,6 +641,7 @@
 				685F37832B9F62C000DD0AA4 /* MainTabbarViewController.xib in Resources */,
 				68EA696C2A2DBC4000EC0045 /* InfoPlist.strings in Resources */,
 				68FC39BE2C0AD2D400357FF0 /* OpenSans-Light.ttf in Resources */,
+				68FC39CC2C0AE5B200357FF0 /* WorkoutStatusView.xib in Resources */,
 				68FC39B92C0AD2D400357FF0 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				68FC39BB2C0AD2D400357FF0 /* OpenSans-Italic.ttf in Resources */,
 				68FC39C02C0AD2D400357FF0 /* OpenSans-Medium.ttf in Resources */,
@@ -616,6 +651,7 @@
 				F42802B724A2076D0044796B /* LaunchScreen.storyboard in Resources */,
 				68FC39BC2C0AD2D400357FF0 /* OpenSans-SemiBold.ttf in Resources */,
 				F42802B424A2076D0044796B /* Assets.xcassets in Resources */,
+				68FC39C62C0AE03E00357FF0 /* TrainingCalendarTableViewCell.xib in Resources */,
 				685F37482B9C875500DD0AA4 /* TrainingCalendarViewController.xib in Resources */,
 				68FC39C22C0AD2D400357FF0 /* OpenSans-BoldItalic.ttf in Resources */,
 			);
@@ -672,13 +708,16 @@
 			files = (
 				685F378C2B9F660600DD0AA4 /* DeviceManager.swift in Sources */,
 				685F37662B9DB3A200DD0AA4 /* AppFont.swift in Sources */,
+				68FC39CE2C0AF46B00357FF0 /* UITableView+Extension.swift in Sources */,
 				685F37472B9C875500DD0AA4 /* TrainingCalendarViewController.swift in Sources */,
 				683589B22C0A266300BB55F9 /* RealmDataSaverServiceable.swift in Sources */,
 				686726112BA094580059B409 /* DateFormat.swift in Sources */,
 				41B861B3278818C3000F6263 /* BaseViewController.swift in Sources */,
+				68FC39C72C0AE03E00357FF0 /* TrainingCalendarTableViewCell.swift in Sources */,
 				F722080E24C04F81009AB995 /* ServiceFacade.swift in Sources */,
 				4183853C278EC4F400D630FA /* UILabel+Extension.swift in Sources */,
 				41AFBC5E278EBA2F0013DE96 /* UIApplication+Extension.swift in Sources */,
+				68FC39D02C0AF76600357FF0 /* Date+Extension.swift in Sources */,
 				6812B40D2B34A0CD009C1EB4 /* ApplicationConfigurable.swift in Sources */,
 				41B861B527881949000F6263 /* AppColor.swift in Sources */,
 				685F37682B9E0AE200DD0AA4 /* BasePopUpVC.swift in Sources */,
@@ -705,6 +744,7 @@
 				689F360E2A29F0BC000B3596 /* BaseView.swift in Sources */,
 				F4796C2925C2B0EA00D466B3 /* BaseViewModel.swift in Sources */,
 				683589B62C0A266A00BB55F9 /* RMUser.swift in Sources */,
+				68FC39CA2C0AE55800357FF0 /* WorkoutStatusView.swift in Sources */,
 				683589B52C0A266A00BB55F9 /* RealmModels.swift in Sources */,
 				683589AB2C0A251F00BB55F9 /* CoreDataManager.swift in Sources */,
 				326F0CC624B41EEA00256F00 /* UIImageView+Extension.swift in Sources */,

@@ -80,7 +80,7 @@ extension ApplicationConfiguration {
         navigationBarAppearance.configureWithTransparentBackground()
         navigationBarAppearance.backgroundColor = AppColor.appBackground
         navigationBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16, weight: .bold),
-                                                       NSAttributedString.Key.foregroundColor: AppColor.main]
+                                                       NSAttributedString.Key.foregroundColor: AppColor.mainText]
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         UINavigationBar.appearance().compactAppearance = navigationBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance

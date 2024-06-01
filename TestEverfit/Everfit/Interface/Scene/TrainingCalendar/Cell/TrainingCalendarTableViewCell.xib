@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="241" id="KGk-i7-Jjw" customClass="TrainingCalendarTableViewCell" customModule="Everfit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="463" height="241"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="463" height="241"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vro-rM-Qr8" userLabel="Container">
+                        <rect key="frame" x="0.0" y="0.0" width="463" height="241"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbK-kN-iMl" userLabel="Date">
+                                <rect key="frame" x="20" y="33" width="36" height="46"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MON" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdv-hV-aU7">
+                                        <rect key="frame" x="0.0" y="0.0" width="36" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="8al-Py-iHh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <color key="textColor" name="SubText"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVY-aN-FFH">
+                                        <rect key="frame" x="0.0" y="20" width="36" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" name="SubText"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="EVY-aN-FFH" firstAttribute="leading" secondItem="UbK-kN-iMl" secondAttribute="leading" id="3Fm-i3-j8f"/>
+                                    <constraint firstAttribute="height" constant="46" id="8uK-FE-c2C"/>
+                                    <constraint firstAttribute="trailing" secondItem="cdv-hV-aU7" secondAttribute="trailing" id="EPg-y0-uE2"/>
+                                    <constraint firstAttribute="width" constant="36" id="EqA-Rc-ZOO"/>
+                                    <constraint firstAttribute="bottom" secondItem="EVY-aN-FFH" secondAttribute="bottom" id="Mdp-Fi-AWE"/>
+                                    <constraint firstAttribute="trailing" secondItem="EVY-aN-FFH" secondAttribute="trailing" id="WXs-Se-M2g"/>
+                                    <constraint firstItem="cdv-hV-aU7" firstAttribute="leading" secondItem="UbK-kN-iMl" secondAttribute="leading" id="Xvl-1f-Y44"/>
+                                    <constraint firstItem="EVY-aN-FFH" firstAttribute="top" secondItem="cdv-hV-aU7" secondAttribute="bottom" id="Y4E-zi-hbh"/>
+                                    <constraint firstItem="cdv-hV-aU7" firstAttribute="top" secondItem="UbK-kN-iMl" secondAttribute="top" id="vxC-0C-ilQ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pon-vC-Qou" userLabel="Workouts">
+                                <rect key="frame" x="72" y="20" width="370" height="201"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wL8-M3-f8l">
+                                        <rect key="frame" x="0.0" y="0.0" width="370" height="201"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="wL8-M3-f8l" firstAttribute="leading" secondItem="pon-vC-Qou" secondAttribute="leading" id="9in-IV-y7p"/>
+                                    <constraint firstAttribute="trailing" secondItem="wL8-M3-f8l" secondAttribute="trailing" id="TWP-oQ-9uH"/>
+                                    <constraint firstAttribute="bottom" secondItem="wL8-M3-f8l" secondAttribute="bottom" id="qlh-Je-4Me"/>
+                                    <constraint firstItem="wL8-M3-f8l" firstAttribute="top" secondItem="pon-vC-Qou" secondAttribute="top" id="ugW-iX-hgK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="AppBackground"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="pon-vC-Qou" secondAttribute="bottom" constant="20" id="52e-VU-FxI"/>
+                            <constraint firstItem="UbK-kN-iMl" firstAttribute="top" secondItem="Vro-rM-Qr8" secondAttribute="top" constant="33" id="BBW-mJ-zxu"/>
+                            <constraint firstItem="pon-vC-Qou" firstAttribute="leading" secondItem="UbK-kN-iMl" secondAttribute="trailing" constant="16" id="BkM-EH-LbX"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="112" id="GfE-CH-gQU"/>
+                            <constraint firstAttribute="trailing" secondItem="pon-vC-Qou" secondAttribute="trailing" constant="21" id="PzF-zO-usl"/>
+                            <constraint firstItem="pon-vC-Qou" firstAttribute="top" secondItem="Vro-rM-Qr8" secondAttribute="top" constant="20" id="nox-ZQ-1U6"/>
+                            <constraint firstItem="UbK-kN-iMl" firstAttribute="leading" secondItem="Vro-rM-Qr8" secondAttribute="leading" constant="20" id="qax-JD-PYb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Vro-rM-Qr8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="2Ou-ky-520"/>
+                    <constraint firstAttribute="bottom" secondItem="Vro-rM-Qr8" secondAttribute="bottom" id="Swv-Ic-pON"/>
+                    <constraint firstAttribute="trailing" secondItem="Vro-rM-Qr8" secondAttribute="trailing" id="Z6U-ah-jCo"/>
+                    <constraint firstItem="Vro-rM-Qr8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="o0n-86-prU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="monthdayLabel" destination="EVY-aN-FFH" id="eKI-TW-wUh"/>
+                <outlet property="weekdayLabel" destination="cdv-hV-aU7" id="I8E-bE-DOf"/>
+                <outlet property="workoutStackView" destination="wL8-M3-f8l" id="SHJ-kO-YiU"/>
+            </connections>
+            <point key="canvasLocation" x="203.81679389312976" y="89.08450704225352"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="AppBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="SubText">
+            <color red="0.4823529411764706" green="0.49411764705882355" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
