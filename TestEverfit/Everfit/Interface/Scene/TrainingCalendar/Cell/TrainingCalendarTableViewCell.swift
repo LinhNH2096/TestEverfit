@@ -8,7 +8,7 @@ struct TrainingCalendarCellModel: Copyable {
 
 // MARK: TrainingCalendarTableViewCellDelegate
 protocol TrainingCalendarTableViewCellDelegate: NSObjectProtocol {
-    func didChangeSelection(cell: TrainingCalendarTableViewCell, with cellModel: TrainingCalendarCellModel)
+    func didChangeSelection(cell: TrainingCalendarTableViewCell, with workoutModel: WorkoutModel)
 }
 
 // MARK: TrainingCalendarTableViewCell
@@ -41,12 +41,6 @@ class TrainingCalendarTableViewCell: UITableViewCell {
 // MARK: WorkoutStatusViewDelegate
 extension TrainingCalendarTableViewCell: WorkoutStatusViewDelegate {
     func didChangeSelection(workoutStatusView: WorkoutStatusView, with workoutModel: WorkoutModel) {
-        guard var cellModel = self.model,
-              let workoutIndex = cellModel.workouts.firstIndex(where: { $0.id == workoutModel.id })
-        else { return }
-        var newWorkouts = cellModel.workouts
-        newWorkouts[workoutIndex] = workoutModel
-        cellModel = cellModel.copy(withChanges: { $0.workouts = newWorkouts })
-        self.delegate?.didChangeSelection(cell: self, with: cellModel)
+        self.delegate?.didChangeSelection(cell: self, with: workoutModel)
     }
 }

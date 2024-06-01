@@ -7,7 +7,7 @@ class TrainingCalendarViewController: BaseViewController {
 
     // MARK: Subjects
     private var loadDataTrigger = PublishRelay<Void>()
-    private var changedSelection = PublishRelay<TrainingCalendarCellModel>()
+    private var changedSelection = PublishRelay<WorkoutModel>()
     private var trainingDates = BehaviorRelay<[TrainingCalendarCellModel]>(value: [])
 
     // MARK: Variables
@@ -22,6 +22,7 @@ class TrainingCalendarViewController: BaseViewController {
     }
 
     private func setupUI() {
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(nibWithCellClass: TrainingCalendarTableViewCell.self)
     }
 
@@ -63,7 +64,7 @@ class TrainingCalendarViewController: BaseViewController {
 
 // MARK: TrainingCalendarTableViewCellDelegate
 extension TrainingCalendarViewController: TrainingCalendarTableViewCellDelegate {
-    func didChangeSelection(cell: TrainingCalendarTableViewCell, with cellModel: TrainingCalendarCellModel) {
-        self.changedSelection.accept(cellModel)
+    func didChangeSelection(cell: TrainingCalendarTableViewCell, with workoutModel: WorkoutModel) {
+        self.changedSelection.accept(workoutModel)
     }
 }

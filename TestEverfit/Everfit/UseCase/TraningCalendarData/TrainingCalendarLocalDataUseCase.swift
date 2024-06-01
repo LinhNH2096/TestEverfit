@@ -9,6 +9,8 @@ protocol TrainingCalendarLocalDataUseCaseable {
     func getAllLocalTrainingData() -> Observable<Result<[RMTrainingDayData], Error>>
 
     func saveLocalTrainingDayData(data trainingDayDatas: [RMTrainingDayData]) -> Observable<[Error]>
+
+    func saveLocalAssigmentData(data assigmentData: RMAssignment) -> Observable<Result<RMAssignment, Error>>
 }
 
 // MARK: - Usecase Implementation
@@ -49,6 +51,16 @@ class TrainingCalendarLocalDataUseCase: TrainingCalendarLocalDataUseCaseable {
                 }
             }
             observer.onNext(errors)
+            observer.on(.completed)
+            return Disposables.create()
+        })
+    }
+
+    func saveLocalAssigmentData(data assigmentData: RMAssignment) -> Observable<Result<RMAssignment, Error>> {
+        return Observable.create({ [weak self] observer -> Disposable in
+            guard let self else { return Disposables.create() }
+            let result = self.localDataService.addItemOrUpdateIfNeed(item: assigmentData)
+            observer.onNext(result)
             observer.on(.completed)
             return Disposables.create()
         })

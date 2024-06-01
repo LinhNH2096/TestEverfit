@@ -36,7 +36,8 @@ class RMTrainingDayData: Object {
                                     name: assignment.title,
                                     status: .future,
                                     numberOfExercises: assignment.exercisesCount,
-                                    completedExercises: assignment.exercisesCompleted)
+                                    completedExercises: assignment.exercisesCompleted,
+                                    isSelected: assignment.isSelected)
             } else if self.date.isInToday {
                 let status: WorkoutStatus = assignment.isCompleted ? .completed : .idle
                 return WorkoutModel(id: assignment.id,
@@ -44,7 +45,8 @@ class RMTrainingDayData: Object {
                                     name: assignment.title,
                                     status: status,
                                     numberOfExercises: assignment.exercisesCount,
-                                    completedExercises: assignment.exercisesCompleted)
+                                    completedExercises: assignment.exercisesCompleted,
+                                    isSelected: assignment.isSelected)
             } else {
                 let status: WorkoutStatus = assignment.isCompleted ? .completed : .missed
                 return WorkoutModel(id: assignment.id,
@@ -52,11 +54,16 @@ class RMTrainingDayData: Object {
                                     name: assignment.title,
                                     status: status,
                                     numberOfExercises: assignment.exercisesCount,
-                                    completedExercises: assignment.exercisesCompleted)
+                                    completedExercises: assignment.exercisesCompleted,
+                                    isSelected: assignment.isSelected)
             }
         }
         return TrainingCalendarCellModel(date: date,
                                          workouts: workouts)
+    }
+
+    func getSelectedAssignmentIds() -> [String] {
+        return assignments.filter({ $0.isSelected }).map({ $0.id })
     }
 }
 
@@ -74,6 +81,7 @@ class RMAssignment: Object {
     @objc dynamic var endDate: Date = Date()
     @objc dynamic var duration: Int = 0
     @objc dynamic var rating: Int = 0
+    @objc dynamic var isSelected: Bool = false
 
     var isCompleted: Bool {
         return exercisesCompleted == exercisesCount
@@ -90,7 +98,8 @@ class RMAssignment: Object {
                      startDate: Date = Date(),
                      endDate: Date = Date(),
                      duration: Int = 0,
-                     rating: Int = 0) {
+                     rating: Int = 0,
+                     isSelected: Bool = false) {
         self.init()
         self.id = id
         self.status = status
@@ -104,6 +113,7 @@ class RMAssignment: Object {
         self.endDate = endDate
         self.duration = duration
         self.rating = rating
+        self.isSelected = isSelected
     }
 
     override class func primaryKey() -> String? {

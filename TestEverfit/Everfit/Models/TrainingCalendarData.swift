@@ -11,8 +11,7 @@ struct TrainingCalendarResponse: Codable {
 }
 
 // MARK: - TrainingDayData
-struct TrainingDayData: Codable, RealmRepresentable {
-    typealias RealmType = RMTrainingDayData
+struct TrainingDayData: Codable {
     let id: String?
     let assignments: [Assignment]?
     let trainer, client, day, date: String?
@@ -22,11 +21,11 @@ struct TrainingDayData: Codable, RealmRepresentable {
         case assignments, trainer, client, day, date
     }
 
-    func asRealmType() -> RMTrainingDayData {
+    func asRealmType(selectedAssignmentIds: [String]) -> RMTrainingDayData {
         let reamlAssignments: List<RMAssignment> = List<RMAssignment>()
         assignments?.compactMap({ $0})
             .forEach { assignment in
-                reamlAssignments.append(assignment.asRealmType())
+                reamlAssignments.append(assignment.asRealmType(selectedAssignmentIds: selectedAssignmentIds))
             }
         return RMTrainingDayData(id: id.unsafelyUnwrapped,
                                  trainer: trainer.unsafelyUnwrapped,
@@ -38,9 +37,7 @@ struct TrainingDayData: Codable, RealmRepresentable {
 }
 
 // MARK: - Assignment
-struct Assignment: Codable, RealmRepresentable {
-    typealias RealmType = RMAssignment
-
+struct Assignment: Codable {
     let id: String?
     let status: Int?
     let client, title, day, date: String?
@@ -58,7 +55,8 @@ struct Assignment: Codable, RealmRepresentable {
         case duration, rating
     }
 
-    func asRealmType() -> RMAssignment {
+    func asRealmType(selectedAssignmentIds: [String]) -> RMAssignment {
+        let isSelected = selectedAssignmentIds.contains(where: { $0 == id })
         return RMAssignment(id: id ?? "",
                             status: status ?? 0,
                             client: client ?? "",
@@ -70,6 +68,7 @@ struct Assignment: Codable, RealmRepresentable {
                             startDate: (startDate?.iso8601StringToDate() ?? Date()).startOfDate(),
                             endDate: (endDate?.iso8601StringToDate() ?? Date()).startOfDate(),
                             duration: duration ?? 0,
-                            rating: rating ?? 0)
+                            rating: rating ?? 0,
+                            isSelected: isSelected)
     }
 }

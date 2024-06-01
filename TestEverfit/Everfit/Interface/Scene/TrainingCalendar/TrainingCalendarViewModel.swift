@@ -1,6 +1,6 @@
 import RxSwift
 import RxCocoa
-
+import RealmSwift
 
 class TrainingCalendarViewModel: BaseViewModel, ViewModelTransformable {
 
@@ -10,7 +10,7 @@ class TrainingCalendarViewModel: BaseViewModel, ViewModelTransformable {
 
     // MARK: Subject
     private let dataModels = BehaviorRelay<[TrainingCalendarCellModel]>(value: [])
-    private let localTrainingData = BehaviorRelay<[RMTrainingDayData]>(value: [])
+    private let localTrainingDayDatas = BehaviorRelay<[RMTrainingDayData]>(value: [])
 
     private let onLoading = PublishRelay<Bool>()
     private let onError = PublishRelay<String>()
@@ -22,7 +22,7 @@ class TrainingCalendarViewModel: BaseViewModel, ViewModelTransformable {
 
     // MARK: Transform
     func transform(input: Input) -> Output {
-        
+
         self.handleLocalTrainingData()
         self.getCacheData()
 
@@ -38,7 +38,7 @@ class TrainingCalendarViewModel: BaseViewModel, ViewModelTransformable {
             .getLocalTrainingData(startDate: currentDate.startOfWeek,
                                   endDate: currentDate.endOfWeek)
             .compactMap({ try? $0.get() })
-            .bind(to: self.localTrainingData)
+            .bind(to: self.localTrainingDayDatas)
             .disposed(by: disposeBag)
     }
 
@@ -52,9 +52,14 @@ class TrainingCalendarViewModel: BaseViewModel, ViewModelTransformable {
             .drive(onNext: { [weak self] result in
                 switch result {
                 case .success(let response):
-                    guard let response = response else { return }
-                    let localData = response.dayData.map({ $0.asRealmType() })
-                    self?.localTrainingData.accept(localData)
+                    guard let self,
+                          let response = response else { return }
+                    let selectedAssignmentIds: [String] = self.localTrainingDayDatas.value
+                        .map({ $0.getSelectedAssignmentIds() })
+                        .reduce([], +)
+                    let localData = response.dayData.map({ $0.asRealmType(selectedAssignmentIds: selectedAssignmentIds)
+                    })
+                    self.localTrainingDayDatas.accept(localData)
                 case .failure(let error):
                     self?.onError.accept(error.localizedDescription)
                 }
@@ -63,7 +68,7 @@ class TrainingCalendarViewModel: BaseViewModel, ViewModelTransformable {
     }
 
     private func handleLocalTrainingData() {
-        self.localTrainingData
+        self.localTrainingDayDatas
             .map({ localData in
                 let dataModels: [TrainingCalendarCellModel] = localData.map({ $0.toTrainingCalendarCellModel() })
                 let weekDates: [Date] = self.currentDate.getWeekdays()
@@ -79,29 +84,41 @@ class TrainingCalendarViewModel: BaseViewModel, ViewModelTransformable {
             .bind(to: self.dataModels)
             .disposed(by: disposeBag)
 
-        self.localTrainingData
+        self.localTrainingDayDatas
             .flatMapLatest { [unowned self] data -> Driver<[Error]> in
-                return self.localDataUseCase.saveLocalTrainingDayData(data: data)
+                return self.localDataUseCase
+                    .saveLocalTrainingDayData(data: data)
                     .asDriverOnErrorJustComplete()
             }
             .asDriverOnErrorJustComplete()
             .drive(onNext: { errors in
-               print("[CACHE] - Errors \(errors)")
+                print("[CACHE] - Errors \(errors)")
             })
             .disposed(by: disposeBag)
     }
 
     private func handleChangeWorkoutSelection(input: Input) {
         input.changedSelection
-            .drive(onNext: { [weak self] updatedCellModel in
-                guard let self else { return }
-                var currentCellModels = self.dataModels.value
-                if let cellIndex = currentCellModels.firstIndex(where: { $0.date.isSameDate(with: updatedCellModel.date) }) {
-                    currentCellModels[cellIndex] = updatedCellModel
-                    self.dataModels.accept(currentCellModels)
-                }
+            .drive(onNext: { [weak self] workoutModel in
+                self?.updateSelectionWith(workoutModel: workoutModel)
             })
             .disposed(by: disposeBag)
+    }
+
+    private func updateSelectionWith(workoutModel: WorkoutModel) {
+        let localTrainingData = self.localTrainingDayDatas.value
+        guard let localDayData = localTrainingData.first(where: { $0.date.isSameDate(with: workoutModel.date) }),
+              let assignment = localDayData.assignments.first(where: { $0.id == workoutModel.id })
+        else { return }
+        do {
+            let realm = try Realm()
+            try realm.safeWrite({
+                assignment.isSelected = workoutModel.isSelected
+            })
+            self.localTrainingDayDatas.accept(self.localTrainingDayDatas.value)
+        } catch {
+            print("[CACHE] Selection Error \(error.localizedDescription)")
+        }
     }
 
 }
@@ -109,7 +126,7 @@ class TrainingCalendarViewModel: BaseViewModel, ViewModelTransformable {
 extension TrainingCalendarViewModel {
     struct Input {
         var loadDataTrigger: Driver<Void>
-        var changedSelection: Driver<TrainingCalendarCellModel>
+        var changedSelection: Driver<WorkoutModel>
     }
 
     struct Output {
